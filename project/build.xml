@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project default="all" basedir=".">
+  <property name="build.src" value="src" />
+  <property name="build.dest" value="classes" />
+  <property name="project" value="hello-app" />
+  <property name="version" value="1.0" />
+  <property name="build.jar" value="${project}-${version}.jar" />
+  <target name="all" depends="compile">
+    <jar jarfile="${build.jar}" basedir="${build.dest}" />
+  </target>
+  <target name="compile">
+    <mkdir dir="${build.dest}" />
+    <javac srcdir="${build.src}" destdir="${build.dest}" />
+  </target>
+</project>
